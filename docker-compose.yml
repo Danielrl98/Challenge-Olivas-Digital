@@ -1,27 +1,40 @@
-services:
-  db:
-    image: mysql:8.0
-    volumes:
-      - db_data:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example_password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress_user
-      MYSQL_PASSWORD: wordpress_password
+version: '3.3'
 
-  wordpress:
-    depends_on:
-      - db
-    image: wordpress:latest
-    ports:
-      - "8000:80" # Você pode modificar a porta de acordo com sua preferência
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DB_USER: wordpress_user
-      WORDPRESS_DB_PASSWORD: wordpress_password
+services: 
+    wordpress:
+        build: .
+        restart: always
+        ports: 
+            - 8080:80
+        environment: 
+            WORDPRESS_DB_HOST: db
+            WORDPRESS_DB_USER: wpuser
+            WORDPRESS_DB_PASSWORD: wppass
+            WORDPRESS_DB_NAME: wpdb
+        volumes: 
+            - db:/var/www/html/wp-content
 
-volumes:
-  db_data:
+    db:
+        image: mysql:5.7
+        restart: always
+        environment: 
+            MYSQL_DATABASE: wpdb
+            MYSQL_USER: wpuser
+            MYSQL_PASSWORD: wppass
+            MYSQL_RANDOM_ROOT_PASSWORD: '1'
+        volumes: 
+            - db:/var/lib/mysql
+
+    adminer:
+        depends_on: 
+            - db
+        image: adminer
+        restart: always
+        ports: 
+            - 8888:8080
+
+networks: 
+    back:
+        
+volumes: 
+    db:
