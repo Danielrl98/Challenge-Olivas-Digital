@@ -1,0 +1,33 @@
+@import './theme'
+
+#header-site
+    border-bottom: 1px solid #ececec
+    position: fixed
+    width: 100%
+    top: 0
+    padding: 20px 0 20px 0
+    z-index: 90
+    background: #f8f8f8
+
+#OD-menu
+
+    gap-row: 10px
+    margin: 10px
+
+    li
+        list-style: none !important
+    a
+        color: $color-text
+        text-decoration: none !important
+
+@media(max-width:767px)
+    #OD-menu-desktop
+        display: none !important
+    #header-responsive-row
+        display: flex !important
+        flex-direction: row !important
+        .col
+            width:50% !important
+        img
+            width: 90% !important
+        

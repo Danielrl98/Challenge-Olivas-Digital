@@ -1,0 +1,46 @@
+@import './theme'
+
+.row
+    row-gap: 50px !important
+    .card
+        -webkit-box-shadow: -2px 3px 35px -1px #e7e3e3
+        -moz-box-shadow: -2px 3px 35px -1px #e7e3e3
+        box-shadow: -2px 3px 35px -1px #e7e3e3
+        border: none !important
+
+.OD-container-image
+    position: relative
+
+    .OD-container-tax
+        position: absolute
+        bottom: -22px
+        right: 18px
+
+        .OD-tax
+            padding:4px 8px
+            color: white
+            background: $backgroud-theme
+            border-radius: 4px
+            margin-right:8px
+
+#OD-image
+    background-size: 100%
+    background-repeat: no-repeat
+    height: 150px
+    width: 100%               
+
+
+@media(max-width:767px)
+    #responsive-row
+        display: flex !important
+        flex-direction: column
+        width: 100% !important
+        margin: 0 !important
+        .col
+            width: 100% !important
+    #OD-image
+        height: 160px
+
+
+
+
