@@ -74,8 +74,7 @@ $projects = new WP_Query(array(
 
                         <div class="row row-cols-3" id="responsive-row">
                             <?php
-                            set_query_var('projects', $projects);
-                            echo get_template_part('templates/projects/card');
+                            echo get_template_part('templates/projects/card','',array($projects)); 
                             ?>
                         </div>
                     <?php

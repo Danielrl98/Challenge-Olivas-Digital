@@ -1,5 +1,4 @@
 <?php
-
 get_header();
 ?>
 <section>
@@ -17,8 +16,7 @@ get_header();
             <p class="text-center p-3"><?php echo __('Olá seja bem vindo ao meu portifólio, abaixo estarei listando meus projetos mais recentes de websites.') ?></p>
             <div class="row row-cols-4" id="responsive-row">
                <?php 
-                set_query_var('projects', $projects);
-                echo get_template_part('templates/projects/card'); 
+                echo get_template_part('templates/projects/card','',array($projects)); 
                ?>
             </div>
         <?php
@@ -29,5 +27,4 @@ get_header();
 </section>
 
 <?php
-
 get_footer();

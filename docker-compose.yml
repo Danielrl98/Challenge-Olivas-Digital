@@ -1,8 +1,6 @@
 services:
   db:
     image: mysql:5.7
-    context: ./
-    build: Dockerfile2
     volumes:
        - ./olivas.sql:/docker-entrypoint-initdb.d/olivas.sql
     restart: always
@@ -19,8 +17,7 @@ services:
     ports: 
         - 8888:8080
   wordpress:
-    context: ./
-    build: Dockerfile1
+    build: .
     depends_on:
       - db
     image: wordpress:latest

@@ -1,5 +1,6 @@
 <?php
-$projects = get_query_var('projects');
+$projects = $args[0];
+$slug = '';
 
 while ($projects->have_posts()) :
     $projects->the_post();
@@ -8,7 +9,7 @@ while ($projects->have_posts()) :
     $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
     if ($thumbnail_url) {
     ?>
-        <a href="<?php echo esc_url(get_permalink()); ?>" class="pointer text-decoration-none">
+        <a href="<?php echo esc_url(get_permalink()); ?>" class="pointer text-decoration-none OD-p0">
             <div class="col">
                 <div class="card">
                     <div class="OD-container-image">
@@ -29,14 +30,13 @@ while ($projects->have_posts()) :
                                             <?php echo esc_html($term->name); ?>
                                         </b>
                                     <?php
-
                                     }
                                     ?>
 
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </p>
-                        <div class="rounded-top" id="OD-image" style="background-image:url(<?php echo $thumbnail_url; ?>)"></div>
+                        <div class="rounded-top lazy-load" id="OD-image" data-src="<?php echo $thumbnail_url; ?>"></div>
                     </div>
                     <div class="p-3">
                         <h2><?php the_title(); ?></h2>
