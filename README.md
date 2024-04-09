@@ -19,7 +19,7 @@ Você precisará ter o Docker e Docker compose na sua máquina, após isso, exec
 Arquivo de banco de dados está configurado para importar automáticamente, por isso será necessário a mudança dos links permanentes
 
 ```sh
-   sudo docker exec -it challenge-olivas-digital-db-1 mysql -u root -pexample_password
+   sudo docker exec -it challenge-olivas-digital-db-1 mysql -h localhost -u root -pexample_password
 ```
 
 Após acessar o banco de dados, executar as seguintes instruções:
