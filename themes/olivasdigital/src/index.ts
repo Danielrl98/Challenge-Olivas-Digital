@@ -3,4 +3,5 @@ import './css/main.sass'
 import './css/index.sass'
 import './css/archive.sass'
 
-import './js/dropdown'
+import './js/utils'
+

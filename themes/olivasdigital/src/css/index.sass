@@ -6,7 +6,7 @@
         -webkit-box-shadow: -2px 3px 35px -1px #e7e3e3
         -moz-box-shadow: -2px 3px 35px -1px #e7e3e3
         box-shadow: -2px 3px 35px -1px #e7e3e3
-        border: none !important
+        border: none !important  
 
 .OD-container-image
     position: relative
@@ -15,28 +15,33 @@
         position: absolute
         bottom: -22px
         right: 18px
+        z-index: 20
 
         .OD-tax
             padding:4px 8px
-            color: white
-            background: $backgroud-theme
+            color: $color-text
+            background: #fff
             border-radius: 4px
+            border: 1px solid $color-text
             margin-right:8px
+            cursor: pointer
 
 #OD-image
     background-size: 100%
     background-repeat: no-repeat
     height: 150px
-    width: 100%               
+    width: 100%
 
-
+#OD-image:hover
+        filter: grayscale(1) !important 
+         
 @media(max-width:967px)
     #responsive-row
         display: flex !important
         flex-direction: column
         width: 100% !important
         margin: 0 !important
-        .col
+        .col,a
             width: 100% !important
     #OD-image
         height: 160px

@@ -10,3 +10,4 @@
 </head>
 <body>
     <?php get_template_part('templates/header/nav')?>
+    <div class="clearfix" style="padding:80px"> </div> <!-- space header/main -->

@@ -3,8 +3,7 @@
 get_header();
 ?>
 <section>
-    <main class="container pt-5">
-
+    <main class="container">
         <?php
 
         $projects = new WP_Query(array(
@@ -14,7 +13,7 @@ get_header();
 
         if ($projects->have_posts()) :
         ?>
-            <h1 class="text-center pt-5 mt-5"> <?php echo __('Meus projetos ') ?></h1>
+            <h1 class="text-center"> <?php echo __('Meus projetos ') ?></h1>
             <p class="text-center p-3"><?php echo __('Olá seja bem vindo ao meu portifólio, abaixo estarei listando meus projetos mais recentes de websites.') ?></p>
             <div class="row row-cols-4" id="responsive-row">
                <?php 
