@@ -21,7 +21,7 @@ while ($projects->have_posts()) :
                             <?php
                             if ($taxonomies) : ?>
                                 <?php foreach ($taxonomies as $taxonomy) : ?>
-                                    <?php $terms = get_the_terms($post_id, $taxonomy); ?>
+                                    <?php $terms = get_the_terms($post_id, $taxonomy); if($terms): ?>
                                     <?php
                                     foreach ($terms as $term) {
                                         $slug = $term -> slug;
@@ -33,7 +33,7 @@ while ($projects->have_posts()) :
                                     }
                                     ?>
 
-                                <?php endforeach; ?>
+                                <?php endif; endforeach; ?>
                             <?php endif; ?>
                         </p>
                         <div class="rounded-top lazy-load" id="OD-image" data-src="<?php echo $thumbnail_url; ?>"></div>

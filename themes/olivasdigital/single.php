@@ -25,7 +25,7 @@ get_header();
                         if ($thumbnail_url) {
                         ?>
                             <div>
-                                <div class="p-5" id="OD-image-single" style="background-image:url(<?php echo $thumbnail_url; ?>)"></div>
+                                <div class="p-5 lazy-load" id="OD-image-single" data-src="<?php echo $thumbnail_url; ?>"></div>
                             </div>
                             <div>
                                 <div>
@@ -55,6 +55,11 @@ get_header();
 
                                 <h1 class="mb-3 mt-3"><?php the_title(); ?></h1>
                                 <p class="mb-3"><?php the_content(); ?></p>
+                                <?php
+                                    $link = get_post_meta( $id, 'link' );
+                                ?>
+
+                                <a target="__blank "href="<?php echo $link[0] ?>">Site do projeto</a>
                             </div>
                         <?php
                         } else {
